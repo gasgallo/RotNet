@@ -29,4 +29,4 @@ You can also specify the following command line arguments:
 To host the model and make available the API directly in the cloud, I've decided to use the free service provided by FloydHub. Indeed, I've created and setup the service with the help of [flask](http://flask.pocoo.org/) and the backend framework of FloydHub that deployed my model into a Docker container.
 The service is publicly available and can be tested by anyone without the need of having a Python machine. You can run the inference on the model as follows:
 
-`curl -o <path_to_output_image_or_directory> -F "file=@<path_to_input_image_or_directory>" https://www.floydlabs.com/serve/zDnTCZufsgh9TQxNCKiQub`
+`curl -o <path_to_output_image> -F "file=@<path_to_input_image>" https://www.floydlabs.com/serve/zDnTCZufsgh9TQxNCKiQub`
