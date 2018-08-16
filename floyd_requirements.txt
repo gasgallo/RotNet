@@ -2,4 +2,4 @@ Pillow
 scipy
 numpy
 flask
-cv2
+opencv-python

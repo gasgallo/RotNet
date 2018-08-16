@@ -67,9 +67,6 @@ if __name__ == '__main__':
     parser.add_argument('model', help='Path to model')
     parser.add_argument('input_path', help='Path to image or directory')
     parser.add_argument('-o', '--output_path', help='Output directory')
-    parser.add_argument('-b', '--batch_size', help='Batch size for running the network')
-    parser.add_argument('-c', '--crop', dest='crop', default=False, action='store_true',
-                        help='Crop out black borders after rotating')
     args = parser.parse_args()
 
     print('Loading model...')
@@ -77,5 +74,4 @@ if __name__ == '__main__':
     output_path = args.output_path if args.output_path else args.input_path
 
     print('Processsing input image(s)...')
-    process_images(model_location, args.input_path, output_path,
-                   args.batch_size, args.crop)
+    process_images(model_location, args.input_path, output_path, 1, False)
