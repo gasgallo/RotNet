@@ -20,7 +20,8 @@ path_r = '.'
 data_path = os.path.join(path_r, 'data', 'images')
 image_paths = []
 for filename in os.listdir(data_path):
-	image_paths.append(os.path.join(data_path, filename))
+	if filename!='.dir3_0.wmd':
+		image_paths.append(os.path.join(data_path, filename))
 
 train_filenames, test_filenames = train_test_split(image_paths, test_size=0.3, random_state=42)
 
@@ -46,10 +47,11 @@ base_model = ResNet50(weights=weights_path, include_top=False,
 # create the new model
 model = Sequential()
 model.add(base_model)
+model.add(Dropout(0.5))
 model.add(Flatten())
 #model.add(Dense(256, activation='relu', name='fc256'))
 model.add(Dense(nb_classes, activation='softmax', name='fc4'))
-#model.layers[0].trainable = False 
+model.layers[0].trainable = False 
 
 model.summary()
 
@@ -73,8 +75,8 @@ checkpointer = ModelCheckpoint(
     monitor=monitor,
     save_best_only=True,
     verbose=1)
-reduce_lr = ReduceLROnPlateau(monitor=monitor, patience=3, verbose=1)
-early_stopping = EarlyStopping(monitor=monitor, patience=5, verbose=1)
+reduce_lr = ReduceLROnPlateau(monitor=monitor, patience=5, verbose=1)
+early_stopping = EarlyStopping(monitor=monitor, patience=10, verbose=1)
 tensorboard = TensorBoard()
 
 # training loop
