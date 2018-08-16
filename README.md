@@ -14,9 +14,9 @@ To run the training launch the script `training.py`. The data for the training w
 In this case (face pictures only), the better performing model has been a ResNet50 pre-trained model with a fully connected layer with 4 neurons to produce the classification into one of the four classes (0, 90, 180, 270). Achieved accuracy on the validation set is around 91%.
 
 ## Create an API
-You can evaluate the model with `correct_rotation.py` script to correct the orientation of any image. You can run it as follows:
+You can evaluate the model with `evaluate.py` script to correct the orientation of any image. You can run it as follows:
 
-`python correct_rotation.py <path_to_hdf5_model> <path_to_input_image_or_directory>`
+`python evaluate.py <path_to_hdf5_model> <path_to_input_image_or_directory>`
 
 You can also specify the following command line arguments:
 - `-o, --output` to specify the output image or directory.
