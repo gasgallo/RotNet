@@ -20,8 +20,6 @@ You can evaluate the model with `evaluate.py` script to correct the orientation 
 
 You can also specify the following command line arguments:
 - `-o, --output` to specify the output image or directory.
-- `-b, --batch_size` to specify the batch size used to run the model.
-- `-c, --crop` to crop out the black borders after rotating the images.
 
 ## Test units
 
