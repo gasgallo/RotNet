@@ -30,3 +30,8 @@ To host the model and make available the API directly in the cloud, I've decided
 The service is publicly available and can be tested by anyone without the need of having a Python machine. You can run the inference on the model as follows:
 
 `curl -o <path_to_output_image> -F "file=@<path_to_input_image>" https://www.floydlabs.com/serve/zDnTCZufsgh9TQxNCKiQub`
+
+## Considerations
+The whole repository has been built in less than 48 hours. Many improvements are still possible, for example:
+- find/build a better dataset to train the model and improve performances on test images
+- try different approches than DCNN. Maybe simpler models could do a good job anyway due to the fact that input images are faces only. The [dlib](http://dlib.net/) library provides many interesting objects.
