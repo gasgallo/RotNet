@@ -1,5 +1,5 @@
 # RotNet
-DCNN for automatic rotation of pictures
+DCNN for automatic rotation of face pictures
 
 ## The task
 Imagine we have a model deployed on the cloud which performs face recognition on images sent to it.This model works great on well-oriented images, i.e. images which are the right way up. However, when badly-oriented images are sent, e.g. upside-down images, the model performs poorly. Since we have no  control over how the images are sent and have no guarantee that the images will come with orientation-metadata, we would like a pre-processing step which fixes the orientation of the images before being sent to the main model. The possible orientations are 0, 90, 180, 270 degrees with respect to the refence orientation.
@@ -27,7 +27,7 @@ You can also specify the following command line arguments:
 To host the model and make available the API directly in the cloud, I've decided to use the free service provided by FloydHub. Indeed, I've created and setup the service with the help of [flask](http://flask.pocoo.org/) and the backend framework of FloydHub that deployed my model into a Docker container.
 The service is publicly available and can be tested by anyone without the need of having a Python machine. You can run the inference on the model as follows:
 
-`curl -o <path_to_output_image> -F "file=@<path_to_input_image>" https://www.floydlabs.com/serve/mp2VKyUDsYXcAt58uEnJWX`
+`curl -o <path_to_output_image> -F "file=@<path_to_input_image>" <url_to_hosting_server>`
 
 ## Considerations
 The whole repository has been built in less than 48 hours. Many improvements are still possible, for example:
