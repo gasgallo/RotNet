@@ -29,6 +29,8 @@ The service is publicly available and can be tested by anyone without the need o
 
 `curl -o <path_to_output_image> -F "file=@<path_to_input_image>" <url_to_hosting_server>`
 
+The job isn't constanly running on the server due to cost reasons. To obtain a working URL to test the code, please contact me and I'll set it up for you.
+
 ## Considerations
 The whole repository has been built in less than 48 hours. Many improvements are still possible, for example:
 - find/build a better dataset to train the model and improve performances on test images
