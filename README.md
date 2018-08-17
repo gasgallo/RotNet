@@ -4,6 +4,13 @@ DCNN for automatic rotation of face pictures
 ## The task
 Imagine we have a model deployed on the cloud which performs face recognition on images sent to it.This model works great on well-oriented images, i.e. images which are the right way up. However, when badly-oriented images are sent, e.g. upside-down images, the model performs poorly. Since we have no  control over how the images are sent and have no guarantee that the images will come with orientation-metadata, we would like a pre-processing step which fixes the orientation of the images before being sent to the main model. The possible orientations are 0, 90, 180, 270 degrees with respect to the refence orientation.
 
+<p align = 'center'>
+<img src = 'examples/take-home-yoyo.jpg' height = '400px'>
+</p>
+<p align = 'center'>
+From lef to right and from top to bottom: reference orientation (0°), +90°, +180°, +270°.
+</p>
+
 ## Data
 The dataset of faces (merge of many dataset freely available on the web, [link](http://www.face-rec.org/databases/)) is available at my Kaggle profile page [here](https://www.kaggle.com/gasgallo/faces-data-new). It's a collection of around 8k pictures of different individuals in different poses. The amount of data should be enough to train the output layer of a pre-trained model.
 Moreover, the compiled model, to use for inference, is available as well at my FloydHub account [here](https://www.floydhub.com/gasgallo/datasets/rotnet_resnet/).
@@ -34,4 +41,4 @@ The job isn't constanly running on the server due to cost reasons. To obtain a w
 ## Considerations
 The whole repository has been built in less than 48 hours. Many improvements are still possible, for example:
 - find/build a better dataset to train the model and improve performances on test images
-- try different approches than DCNN. Maybe simpler models could do a good job anyway due to the fact that input images are faces only. The [dlib](http://dlib.net/) library provides many interesting objects.
+- try different approches than DCNN. Maybe simpler models could do a good job anyway due to the fact that input images are faces only. The [dlib](http://dlib.net/) library provides many interesting objects (see the implementation [here](https://github.com/gasgallo/FaceRot)).
