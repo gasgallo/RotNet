@@ -13,14 +13,15 @@ This app does the following:
 
 from __future__ import print_function
 
-import numpy as np
+#import numpy as np
 import os
 from flask import Flask, send_file, request
 from werkzeug.exceptions import BadRequest
 from werkzeug.utils import secure_filename
 
-from keras.applications.imagenet_utils import preprocess_input
+#from keras.applications.imagenet_utils import preprocess_input
 from keras.models import load_model
+
 from evaluate import process_images
 
 ALLOWED_EXTENSIONS = set(['jpg', 'jpeg', '.bmp', '.png'])

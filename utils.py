@@ -3,11 +3,11 @@ from __future__ import division
 import math
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 from keras.preprocessing.image import Iterator
 from keras.utils.np_utils import to_categorical
-import keras.backend as K
+#import keras.backend as K
 
 
 def rotate(image, angle):
