@@ -283,4 +283,3 @@ class RotNetDataGenerator(Iterator):
             index_array = next(self.index_generator)
         # create array to hold the images
         return self._get_batches_of_transformed_samples(index_array)
-

@@ -50,7 +50,8 @@ def correct_rotation():
 
     ######################
     
-    model_location = load_model('/input/rotnet_resnet50.hdf5')
+#    model_location = load_model('/input/rotnet_resnet50.hdf5')
+    model_location = load_model('/input/rotnet_vgg16.hdf5')
     process_images(model_location, input_filepath, output_filepath,
                    1, False)
 
